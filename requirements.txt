@@ -1,3 +1,4 @@
 Flask
 yadisk
 numpy
+requests
