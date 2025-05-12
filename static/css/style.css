@@ -1,0 +1,14 @@
+body {
+  background: #f8f9fa;
+}
+.card {
+  border-radius: 0.75rem;
+}
+.card-header {
+  font-weight: bold;
+  background: #ffffff;
+}
+#alarm-status {
+  font-weight: bold;
+  color: #d63384;
+}

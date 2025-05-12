@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Финансовый Анализ и Прогноз</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body class="bg-light">
+  <div class="container py-4">
+    <h1 class="text-center mb-4">Финансовый Анализ и Прогноз</h1>
+    <div class="mb-3 text-center">
+      <label>Пользователь: 
+        <input id="user" class="form-control d-inline-block w-auto" value="demo">
+      </label>
+    </div>
+
+    <div class="row g-4">
+      <!-- Статистика -->
+      <div class="col-md-4">
+        <div class="card shadow">
+          <div class="card-header">Статистика</div>
+          <div class="card-body">
+            <button id="get-stats" class="btn btn-primary mb-2 w-100">Загрузить</button>
+            <ul id="stats" class="list-group list-group-flush"></ul>
+          </div>
+        </div>
+      </div>
+      <!-- Баланс -->
+      <div class="col-md-4">
+        <div class="card shadow">
+          <div class="card-header">Баланс</div>
+          <div class="card-body text-center">
+            <button id="get-balance" class="btn btn-success mb-2 w-100">Показать</button>
+            <div id="balance" class="fs-3"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Праздники -->
+      <div class="col-md-4">
+        <div class="card shadow">
+          <div class="card-header">Ближайшие праздники</div>
+          <div class="card-body">
+            <button id="get-holidays" class="btn btn-warning mb-2 w-100">Узнать</button>
+            <ul id="holidays" class="list-group list-group-flush"></ul>
+          </div>
+        </div>
+      </div>
+      <!-- Доход/Расход -->
+      <div class="col-md-6">
+        <div class="card shadow">
+          <div class="card-header">Добавить доход / расход</div>
+          <div class="card-body">
+            <form id="income-form" class="mb-3">
+              <h6>Доход</h6>
+              <input type="date" id="income-date" class="form-control mb-2">
+              <input type="number" id="income-amount" class="form-control mb-2" placeholder="Сумма">
+              <input type="text" id="income-source" class="form-control mb-2" placeholder="Источник">
+              <button class="btn btn-outline-primary w-100">Добавить доход</button>
+            </form>
+            <form id="expense-form">
+              <h6>Расход</h6>
+              <input type="date" id="expense-date" class="form-control mb-2">
+              <input type="number" id="expense-amount" class="form-control mb-2" placeholder="Сумма">
+              <input type="text" id="expense-category" class="form-control mb-2" placeholder="Категория">
+              <button class="btn btn-outline-danger w-100">Добавить расход</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Напоминания -->
+      <div class="col-md-6">
+        <div class="card shadow">
+          <div class="card-header">Напоминания</div>
+          <div class="card-body">
+            <form id="reminder-form" class="mb-3">
+              <input type="text" id="rem-text" class="form-control mb-2" placeholder="Текст напоминания">
+              <input type="datetime-local" id="rem-date" class="form-control mb-2" step="1">
+              <button class="btn btn-outline-secondary w-100">Добавить напоминание</button>
+            </form>
+            <ul id="reminders" class="list-group list-group-flush"></ul>
+          </div>
+        </div>
+      </div>
+      <!-- Секундомер и Будильник -->
+      <div class="col-12">
+        <div class="card shadow">
+          <div class="card-header">Секундомер & Будильник</div>
+          <div class="card-body text-center">
+            <div class="mb-4">
+              <h5>Секундомер: <span id="sw-display">00:00:00</span></h5>
+              <button id="sw-start" class="btn btn-success me-2">Старт</button>
+              <button id="sw-stop" class="btn btn-danger me-2">Стоп</button>
+              <button id="sw-reset" class="btn btn-secondary">Сброс</button>
+            </div>
+            <div>
+              <h5>Будильник</h5>
+              <input type="datetime-local" id="alarm-time" class="form-control d-inline-block w-auto me-2" step="1">
+              <button id="set-alarm" class="btn btn-warning">Установить</button>
+              <div id="alarm-status" class="mt-2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Скрипты -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

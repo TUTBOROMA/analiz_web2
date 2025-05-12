@@ -1,0 +1,4 @@
+import os
+CLIENT_ID     = os.getenv('CLIENT_ID', '2bbef6ae892740418c73d62af8e47366')
+CLIENT_SECRET = os.getenv('CLIENT_SECRET', 'b2af829ef1b2452baf85d9d9532c84ac')
+REFRESH_TOKEN = os.getenv('REFRESH_TOKEN', '1:svKccVatTXAPlcLk:1hKw1dEXnFBKQZNpkBD63cAlQM1UwWQxHvDTxfT_k6YT9aGaORbmz7tznGip4rli2vZAqKojNw:y7bb2BfPGWvE-_HiCSIgoA')
